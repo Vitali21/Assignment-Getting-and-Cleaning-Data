@@ -77,7 +77,7 @@ merged_file2_task2 <- merged_file2[, c(mean_columns_table, std_columns_table)]
 
 
 ##########################    TASK#3   ############################
-#Using descriptive activity names to name the activities in the data set
+#using descriptive activity names to name the activities in the data set
 merged_file2$train_activity_label <- replace(merged_file2$train_activity_label,grep("1", merged_file2$train_activity_label),"WALKING")
 merged_file2$train_activity_label <- replace(merged_file2$train_activity_label,grep("2", merged_file2$train_activity_label),"WALKING_UPSTAIRS")
 merged_file2$train_activity_label <- replace(merged_file2$train_activity_label,grep("3", merged_file2$train_activity_label),"WALKING_DOWNSTAIRS")
@@ -106,22 +106,20 @@ merged_file2$test_activity_label <- replace(merged_file2$test_activity_label,gre
 
 
 ##########################    TASK#5   ############################
-#select mean columns
+#selecting mean columns
 #mean columns indexes are defined in task#2: mean_columns <- grep("mean", names(merged_file2))
 test <- merged_file2[mean_columns]
 
-#select also columns: "train_id", "train_activity_label" and "train_participant_id"
+#selecting also columns: "train_id", "train_activity_label" and "train_participant_id"
 test2 <- merged_file2[c(1,2,3)]
-#select also columns: "test_activity_label" and "test_participant_id"
+#selecting also columns: "test_activity_label" and "test_participant_id"
 test3 <- merged_file2[c(565, 566)]
 
-# PEREIMENOVAT TEST
-
-#add 5 above selected columns to file test
+#adding 5 above selected columns to file test
 test <- cbind(test2, test)
 test <- cbind(test3, test)
 
-#remove train_id colum because it is unnecessary
+#removing train_id colum because it is unnecessary
 test$train_id <- NULL
 
 #changing all columns except first 4 columns to one column: features
