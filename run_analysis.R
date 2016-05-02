@@ -106,6 +106,7 @@ merged_file2$test_activity_label <- replace(merged_file2$test_activity_label,gre
 
 
 ##########################    TASK#5   ############################
+library(dplyr)
 #selecting mean columns
 #mean columns indexes are defined in task#2: mean_columns <- grep("mean", names(merged_file2))
 test <- merged_file2[mean_columns]
