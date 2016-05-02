@@ -57,8 +57,6 @@ merged_file2 <- merge(file2, test_file2, by.x = "train_id", by.y = "test_id")
 
 
 
-
-
 ##########################    TASK#2   ############################
 #extracting only mean columns indexes
 mean_columns <- grep("mean", names(merged_file2))
@@ -78,7 +76,6 @@ merged_file2_task2 <- merged_file2[, c(mean_columns_table, std_columns_table)]
 
 
 
-
 ##########################    TASK#3   ############################
 #Using descriptive activity names to name the activities in the data set
 merged_file2$train_activity_label <- replace(merged_file2$train_activity_label,grep("1", merged_file2$train_activity_label),"WALKING")
@@ -95,6 +92,8 @@ merged_file2$test_activity_label <- replace(merged_file2$test_activity_label,gre
 merged_file2$test_activity_label <- replace(merged_file2$test_activity_label,grep("5", merged_file2$test_activity_label),"STANDING")
 merged_file2$test_activity_label <- replace(merged_file2$test_activity_label,grep("6", merged_file2$test_activity_label),"LAYING")
 ##########################    TASK#3   ############################
+
+
 
 
 ##########################    TASK#4   ############################
@@ -159,17 +158,3 @@ names(test17)[2] <- "feature"
 #removing column mean
 test17$mean <- NULL
 ##########################    TASK#5   ############################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
